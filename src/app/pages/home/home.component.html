@@ -1,0 +1,99 @@
+
+<!-----------------------------------Carousel de fotos------------------------->
+
+<div [ngStyle]="{'height':'400px'}" id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/img/home/starwars6.jpg" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/home/starwars2.jpg" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/home/starwars4.jpg" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/home/starwars5.jpg" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/home/starwars1.jpg" class="d-block w-100 carousel-img" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+<!-----------------informacion de Star wars-------------------------->
+
+<div class="container-fluid " >
+    <div class="row">
+      <div class="col-12">
+           <h2>Historia</h2>
+           <p> 
+            Star Wars, conocida también en español como La guerra de las galaxias,
+            6​7​8​ es una franquicia compuesta primordialmente de una serie de películas 
+            concebidas por el cineasta estadounidense George Lucas en la década de 1970, 
+            y producidas y distribuidas por The Walt Disney Company a partir de 2012. 
+            Su trama describe las vivencias de un grupo de personajes que habitan en una 
+            galaxia ficticia e interactúan con elementos como «la Fuerza», un campo de energía 
+            metafísico y omnipresente9​ que posee un «lado luminoso» impulsado por la sabiduría, 
+            la nobleza y la justicia y utilizado por Jedi, y un «lado oscuro» usado por los Sith y 
+            provocado por la ira, el miedo y el odio.
+           </p>
+           <p>
+            La primera película de la serie, Star Wars: Episodio IV - Una nueva esperanza (1977), 
+            contó con actores como Mark Hamill, Harrison Ford, Carrie Fisher, Alec Guinness, Anthony 
+            Daniels, Kenny Baker, Peter Mayhew y David Prowse. Aunque tuvo numerosas dificultades durante 
+            la producción, 20th Century Fox se encargó de su distribución y fue estrenada el 25 de mayo de 1977.11​ 
+            Se convirtió en un fenómeno de la cultura popular y su influencia ha sido reconocida por numerosos 
+            cineastas.12​13​ Su éxito hizo que Lucas financiara dos secuelas más, Star Wars: Episodio V - El Imperio 
+            contraataca y Star Wars: Episode VI - Return of the Jedi, que completaron la denominada «trilogía original»
+             y a las que se incorporaron actores como Billy Dee Williams, Frank Oz e Ian McDiarmid.
+           </p>
+           
+      </div>
+      <div class="col-12" [ngStyle]="{'background-color':'#2F4F4F'}">
+        <h2>Personajes</h2>
+           <p>
+            Además de la raza humana, se describen múltiples tipos de especies extraterrestres procedentes de los numerosos planetas y satélites que forman 
+            dicha galaxia y que pertenecen a la alianza de planetas de la República Galáctica.
+           </p>
+           <p>
+            Existen dos grupos de humanos que son sensibles a la Fuerza pero que poseen ideologías diferentes entre sí: los Jedi y los Sith. La estructura 
+            jerárquica de la orden Jedi incluye a los maestros, como Obi-Wan Kenobi, Luke Skywalker y Yoda; sus aprendices o también conocidos como padawan; 
+            los iniciados o younglings que suelen ser menores de edad; y los caballeros, cuyo estatus progresa al de un maestro una vez que concluyen el 
+            entrenamiento de su respectivo aprendiz. Además de los anteriores, existen otros tipos de Jedi que persiguen fines específicos: por ejemplo, 
+            los guardianes, los centinelas y los consulares.24​ Los Sith poseen una estructura similar, en la que un maestro puede tener aprendices bajo su tutela,
+             aunque también incluyen a otros miembros como los Jedi oscuros y los Inquisidores. Los primeros comprenden aquellos que «contravienen el código Jedi»,
+             25​ mientras que los Inquisidores constituyen «una organización de agentes sensibles a la Fuerza que trabajaban para el Imperio».26​ Algunos ejemplos de Sith, 
+             Jedi oscuros e Inquisidores son Darth Sidious y Darth Vader, Asajj Ventress, y el Gran Inquisidor, respectivamente. A su vez, entre los funcionarios imperiales 
+             se pueden mencionar Orson Krennic, Wilhuff Tarkin y Moff Gideon.
+           </p>
+      </div>
+      <div class="col-12" [ngStyle]="{'padding-bottom':'15px', 'background-color':'#696969'}">
+        <h2>Escenarios</h2>
+        <p>
+            La galaxia ficticia en la que tienen lugar los acontecimientos de Star Wars está formada por varias regiones, que a su vez se subdividen en sectores 
+            y sistemas, con numerosos planetas y satélites como Bespin, Dagobah, Utapau o Yavin, y entre los que destacan principalmente:
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-5 g-4 p-2">
+            <div class="col" *ngFor="let escenarios of escenarios">
+              <div class="card">
+                <img [ngStyle]="{'height':'96.63px'}" src="{{escenarios.img}}" class="card-img-top" alt="...">
+                <div class="card-body" [ngStyle]="{'height':'232px', 'overflow':'hidden', 'background-color':'#D3D3D3'}">
+                  <h5 class="card-title">{{escenarios.name}}</h5>
+                  <p [ngStyle]="{'color':'#000', 'font-size':'13px'}" class="card-text">{{escenarios.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+    </div>
+  </div>

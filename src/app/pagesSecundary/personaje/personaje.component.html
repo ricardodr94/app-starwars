@@ -1,0 +1,28 @@
+
+
+<!-----------------Tarjeta con datos de personaje-------------------------------->
+<div class="card mb-3 mt-2" style="max-width: 540px; margin-left: 10px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [ngStyle]="{'width':'179px', 'height':'244px'}" src="{{personaje.url_images}}" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{personaje.name}}</h5>
+        <p class="card-text">Color de ojos: {{personaje.eye_color}}</p>
+        <p class="card-text">Color de cabello: {{personaje.hair_color}}</p>
+        <p class="card-text">Color de piel: {{personaje.skin_color}}</p>
+        <p class="card-text">Estatura: {{personaje.height}}</p>
+        <p class="card-text">Peso: {{personaje.mass}}</p>
+        <p class="card-text">Genero: {{personaje.gender}}</p>
+        <p class="card-text"><small class="text-muted">Fecha de nacimiento: {{personaje.birth_year}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------Boton para regresar a pagina de personajes---------------------------->
+<button type="button" class="btn btn-outline-primary " [ngStyle]="{'margin-left':'10px', 'width':'179px'}" [routerLink]="['/personajes']">Regresar</button>
+
+
+

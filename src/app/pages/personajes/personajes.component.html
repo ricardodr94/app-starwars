@@ -1,0 +1,52 @@
+<!--------------------Carousel de personajes ------------------------------------>
+<div [ngStyle]="{'height':'400px'}" id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/personajes/Darth Vader.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/personajes/C-3PO.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/personajes/R2-D2.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/personajes/Biggs Darklighter.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!------------------------Buscador------------------------------------>
+<nav class="navbar navbar-dark bg-dark mt-2">
+  <div class="container">
+    <div class="input-group">
+      <input  type="text" #texto (keyup)="searchPersonajes(texto.value)" class="form-control" placeholder="Buscar personaje" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </div>
+</nav>
+
+<!----------------------- Tarjetas de Personajes---------------------->
+<div class="row row-cols-1 row-cols-md-4 g-4 m-3">
+  <div class="col" *ngFor="let listaPersonajes of personajes; let i=index">
+    <div class="card h-100">
+      <img  src="{{ listaPersonajes.url_images}}" class="card-img-top" alt="..." onerror="this.src='assets/img/imgNoDisponible/img1.png'">
+      <div class="card-body" style="background-color: #DCD8D3;">
+        <h5 class="card-title">{{ listaPersonajes.name }}</h5>
+        <p class="card-text">Genero: {{ listaPersonajes.gender }}</p>
+        <p class="card-text">Estatura: {{ listaPersonajes.height }}</p>
+        <p class="text-muted">Cumpleaños: {{ listaPersonajes.birth_year }}</p>
+        <div class="d-grid gap-2">
+          <button (click)="verPersonaje(i)" class="btn btn-outline-primary" type="button">Ver mas...</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<!--------------------------Carousel de Naves-------------------------->
+<div [ngStyle]="{'height':'400px'}" id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/naves/Executor.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/naves/Millennium Falcon.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/naves/Star Destroyer.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/naves/Y-wing.jpg" class="d-block w-100 carousel-img" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--------------------------------Buscador------------------------------------>
+<nav class="navbar navbar-dark bg-dark mt-2">
+  <div class="container">
+    <div class="input-group">
+      <input  type="text" #texto (keyup)="searchNaves(texto.value)" class="form-control" placeholder="Buscar nave" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </div>
+</nav>
+
+<!---------------------------Lista de Naves-------------------------->
+<div class="row row-cols-1 row-cols-md-4 g-4 m-3">
+    <div class="col"  *ngFor="let listaNaves of naves; let i=index">
+      <div class="card h-100">
+        <img src="{{ listaNaves.url_images}}" class="card-img-top" alt="..."  onerror="this.src='assets/img/imgNoDisponible/img1.png'">
+        <div class="card-body" style="background-color: #DCD8D3;">
+          <h5 class="card-title">{{ listaNaves.name }}</h5>
+          <p>Model: {{ listaNaves.model }}</p>
+          <p>Length: {{ listaNaves.length }}</p>
+          <div class="d-grid gap-2">
+            <button (click)="verNave(i)" class="btn btn-outline-primary" type="button">Ver mas...</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

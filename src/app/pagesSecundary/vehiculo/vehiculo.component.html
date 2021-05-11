@@ -1,0 +1,25 @@
+<!-----------------Tarjeta con datos de vehiculo-------------------------------->
+
+<div class="card mb-3 mt-2" style="max-width: 540px; margin-left: 10px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [ngStyle]="{'width':'179px', 'height':'244px'}" src="{{vehiculo.url_images}}" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{vehiculo.name}}</h5>
+          <p class="card-text">Modelo: {{vehiculo.model}}</p>
+          <p class="card-text">Clase: {{vehiculo.vehicle_class}}</p>
+          <p class="card-text">Cantidad de pasajeros permitidos: {{vehiculo.passengers}}</p>
+          <p class="card-text">Velocidad: {{vehiculo.max_atmosphering_speed}}</p>
+          <p class="card-text">Capacidad de peso: {{vehiculo.cargo_capacity}}</p>
+          <p class="card-text">Longuitud: {{vehiculo.length}}</p>
+          <p class="card-text">Fabricado por: {{vehiculo.manufacturer}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--------Boton para regresar a pagina de vehiculos---------------------------->
+<button type="button" class="btn btn-outline-primary " [ngStyle]="{'margin-left':'10px', 'width':'179px'}" [routerLink]="['/vehiculos']">Regresar</button>
+

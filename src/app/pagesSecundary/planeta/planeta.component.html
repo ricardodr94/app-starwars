@@ -1,0 +1,25 @@
+<!-----------------Tarjeta con datos de planeta-------------------------------->
+<div class="card mb-3 mt-2" style="max-width: 540px; margin-left: 10px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [ngStyle]="{'width':'179px', 'height':'244px'}" src="{{planeta.url_images}}" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{planeta.name}}</h5>
+          <p class="card-text">Diametro: {{planeta.diameter}}</p>
+          <p class="card-text">Rotacion : {{planeta.rotation_period}}</p>
+          <p class="card-text">Periodo de orbita: {{planeta.orbital_period}}</p>
+          <p class="card-text">Gravedad: {{planeta.gravity}}</p>
+          <p class="card-text">Poblacion: {{planeta.population}}</p>
+          <p class="card-text">Clima: {{planeta.climate}}</p>
+          <p class="card-text">Terreno: {{planeta.terrain}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--------Boton para regresar a pagina de planetas---------------------------->
+<button type="button" class="btn btn-outline-primary" [ngStyle]="{'margin-left':'10px', 'width':'179px'}" [routerLink]="['/planetas']">Regresar</button>
+
